@@ -1,11 +1,19 @@
-FROM leanprover/lean4:v4.31.0
+FROM debian:bookworm-slim
 
-USER root
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends python3 \
+    && apt-get install -y --no-install-recommends ca-certificates curl python3 \
     && rm -rf /var/lib/apt/lists/*
 
+ENV ELAN_HOME=/opt/elan
+ENV PATH=/opt/elan/bin:$PATH
+
+RUN curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf \
+    | sh -s -- -y --default-toolchain none
+
 WORKDIR /app
+
+COPY lean-toolchain .
+RUN elan toolchain install "$(cat lean-toolchain)"
 
 COPY . .
 

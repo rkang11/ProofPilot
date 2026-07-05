@@ -32,8 +32,8 @@ from backend.static import resolve_static_path  # noqa: E402
 from worker.verify import verify_lean  # noqa: E402
 
 
-HOST = "127.0.0.1"
-PORT = int(os.environ.get("PROOFPILOT_PORT", "8000"))
+HOST = os.environ.get("PROOFPILOT_HOST", "127.0.0.1")
+PORT = int(os.environ.get("PROOFPILOT_PORT", os.environ.get("PORT", "8000")))
 MAX_REPAIR_ROUNDS = max(1, int(os.environ.get("PROOFPILOT_REPAIR_ROUNDS", "3")))
 
 

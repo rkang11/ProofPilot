@@ -14,5 +14,6 @@ The app can generate plain-English proof explanations, create proof sketches, tr
 - **AI/LLM:** Google Gemini API
 - **Formal verification:** Lean 4
 - **Verification worker:** Python wrapper around the Lean CLI
+- **Web hosting:** Docker, Render
 - **Testing:** Python `unittest`, Node syntax checks
 - **Evaluation:** Custom benchmark scripts for proof generation, verification, and repair behavior

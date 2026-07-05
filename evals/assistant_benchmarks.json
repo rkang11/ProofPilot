@@ -1,0 +1,131 @@
+[
+  {
+    "id": "assistant_formalize_and_intro_001",
+    "mode": "formalize",
+    "prompt": "Prove that if p and q are true, then p and q is true.",
+    "expected_verification": "verified",
+    "required_lean": "And.intro",
+    "required_text": "conjunction"
+  },
+  {
+    "id": "assistant_explain_conjunction_001",
+    "mode": "explain",
+    "prompt": "Explain conjunction",
+    "expected_verification": "not_generated",
+    "required_lean": "",
+    "required_text": "conjunction"
+  },
+  {
+    "id": "assistant_sketch_and_intro_001",
+    "mode": "sketch",
+    "prompt": "Prove that if p and q are true, then p and q is true.",
+    "expected_verification": "not_generated",
+    "required_lean": "",
+    "required_text": "Assume"
+  },
+  {
+    "id": "assistant_repair_rfl_001",
+    "mode": "repair",
+    "prompt": "Fix this Lean proof.",
+    "lean_code_context": "example : 1 = 1 := by 2",
+    "expected_verification": "verified",
+    "required_lean": "rfl",
+    "required_text": "repaired"
+  },
+  {
+    "id": "assistant_formalize_implication_001",
+    "mode": "formalize",
+    "prompt": "If p implies q and p is true, prove q.",
+    "expected_verification": "verified",
+    "required_lean": "h hp",
+    "required_text": "implication"
+  },
+  {
+    "id": "assistant_formalize_iff_001",
+    "mode": "formalize",
+    "prompt": "Prove p iff q from p implies q and q implies p.",
+    "expected_verification": "verified",
+    "required_lean": "Iff.intro",
+    "required_text": "direction"
+  },
+  {
+    "id": "assistant_formalize_forall_001",
+    "mode": "formalize",
+    "prompt": "For all x, P x is true. Use that to prove P a for a particular a.",
+    "expected_verification": "verified",
+    "required_lean": "h a",
+    "required_text": "universal"
+  },
+  {
+    "id": "assistant_formalize_arithmetic_001",
+    "mode": "formalize",
+    "prompt": "Prove that 1 + 1 = 2.",
+    "expected_verification": "verified",
+    "required_lean": "1 + 1 = 2",
+    "required_text": "arithmetic"
+  },
+  {
+    "id": "assistant_explain_induction_001",
+    "mode": "explain",
+    "prompt": "Explain induction on natural numbers.",
+    "expected_verification": "not_generated",
+    "required_lean": "",
+    "required_text": "base case"
+  },
+  {
+    "id": "assistant_formalize_negation_001",
+    "mode": "formalize",
+    "prompt": "Given p is true and not p, prove a contradiction.",
+    "expected_verification": "verified",
+    "required_lean": "hnp hp",
+    "required_text": "contradiction"
+  },
+  {
+    "id": "assistant_formalize_disjunction_001",
+    "mode": "formalize",
+    "prompt": "Given p or q, and both cases prove r, prove r.",
+    "expected_verification": "verified",
+    "required_lean": "cases h",
+    "required_text": "cases"
+  },
+  {
+    "id": "assistant_formalize_exists_001",
+    "mode": "formalize",
+    "prompt": "Prove there exists n such that P n by using witness 0 and proof P 0.",
+    "expected_verification": "verified",
+    "required_lean": "Exists.intro",
+    "required_text": "witness"
+  },
+  {
+    "id": "assistant_formalize_rewrite_001",
+    "mode": "formalize",
+    "prompt": "Rewrite using a = b to prove a + 1 = b + 1.",
+    "expected_verification": "verified",
+    "required_lean": "rw [h]",
+    "required_text": "rewrite"
+  },
+  {
+    "id": "assistant_formalize_arithmetic_002",
+    "mode": "formalize",
+    "prompt": "Prove that 2 + 2 = 4.",
+    "expected_verification": "verified",
+    "required_lean": "2 + 2 = 4",
+    "required_text": "arithmetic"
+  },
+  {
+    "id": "assistant_auto_concept_contradiction_001",
+    "mode": "auto",
+    "prompt": "What is proof by contradiction?",
+    "expected_verification": "not_generated",
+    "required_lean": "",
+    "required_text": "contradiction"
+  },
+  {
+    "id": "assistant_formalize_clarify_prime_numbers_001",
+    "mode": "formalize",
+    "prompt": "Prove something about prime numbers.",
+    "expected_verification": "not_generated",
+    "required_lean": "",
+    "required_text": "precise statement"
+  }
+]

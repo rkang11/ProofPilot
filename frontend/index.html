@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ProofPilot</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="workspace">
+      <section class="editor-pane">
+        <div class="topbar">
+          <div>
+            <h1>ProofPilot</h1>
+            <p>Proof assistant with verifier-backed Lean output.</p>
+          </div>
+        </div>
+
+        <section class="assistant-panel">
+          <div class="section-heading">
+            <div>
+              <h2>Ask a proof question</h2>
+              <p>Enter a theorem, exercise, or concept. ProofPilot can explain the idea, build a formal proof, check it, or ask for missing details.</p>
+            </div>
+            <div class="assistant-actions">
+              <button id="assistButton" type="button">Generate</button>
+              <button id="useAssistantLeanButton" class="secondary" type="button" disabled>Use Lean</button>
+            </div>
+          </div>
+
+          <label>
+            Problem or concept
+            <textarea id="assistantInput" rows="4">Prove that if p and q are true, then p and q is true.</textarea>
+          </label>
+
+          <div id="assistantOutput" class="assistant-output">
+            <div class="empty-state">Generate a proof sketch, Lean formalization, verifier result, and explanation.</div>
+          </div>
+        </section>
+
+        <details class="advanced-workspace">
+          <summary>
+            <span>Advanced Lean Workspace</span>
+            <small>Edit, verify, or repair generated Lean code.</small>
+          </summary>
+
+          <div class="advanced-content">
+            <div class="advanced-actions">
+              <button id="verifyButton" type="button">Verify Lean</button>
+              <div id="statusBadge" class="status idle">Idle</div>
+            </div>
+
+            <label>
+              Title
+              <input id="titleInput" value="Reflexive equality">
+            </label>
+
+            <label class="code-label">
+              Lean code
+              <textarea id="codeInput" spellcheck="false">example : 1 = 1 := by rfl</textarea>
+            </label>
+
+            <div class="advanced-result-grid">
+              <section>
+                <h2>Diagnostics</h2>
+                <pre id="diagnostics">Run verification to see Lean output.</pre>
+                <div class="under-panel-action">
+                  <button id="repairButton" class="secondary compact" type="button" disabled>Repair</button>
+                </div>
+                <div class="nested-panel">
+                  <h2>Repair History</h2>
+                  <div id="repairHistory" class="repair-history"></div>
+                </div>
+              </section>
+
+              <section>
+                <h2>Repair Result</h2>
+                <pre id="repairPrompt">Run repair after a failed verification to see the candidate proof.</pre>
+              </section>
+
+              <section>
+                <h2>Attempts</h2>
+                <div id="attempts" class="attempts"></div>
+              </section>
+
+              <section>
+                <h2>Metrics</h2>
+                <div id="metrics" class="metrics-grid"></div>
+                <div class="under-panel-action">
+                  <button id="resetButton" class="secondary compact" type="button">Reset</button>
+                </div>
+              </section>
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

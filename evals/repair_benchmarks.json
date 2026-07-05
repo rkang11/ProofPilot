@@ -1,0 +1,38 @@
+[
+  {
+    "id": "repair_rfl_001",
+    "title": "Repair equality proof body",
+    "statement": "example : 1 = 1 := by exact 2",
+    "code": "example : 1 = 1 := by exact 2",
+    "topic": "equality",
+    "expected_initial": "failed",
+    "expected_repair": "verified"
+  },
+  {
+    "id": "repair_rfl_002",
+    "title": "Repair malformed tactic body",
+    "statement": "example : 1 = 1 := by 2",
+    "code": "example : 1 = 1 := by 2",
+    "topic": "syntax",
+    "expected_initial": "failed",
+    "expected_repair": "verified"
+  },
+  {
+    "id": "repair_logic_001",
+    "title": "Repair conjunction proof body",
+    "statement": "example (p q : Prop) (hp : p) (hq : q) : p ∧ q := by exact hp",
+    "code": "example (p q : Prop) (hp : p) (hq : q) : p ∧ q := by exact hp",
+    "topic": "logic",
+    "expected_initial": "failed",
+    "expected_repair": "verified"
+  },
+  {
+    "id": "repair_impossible_001",
+    "title": "Detect impossible equality",
+    "statement": "example : 1 = 2 := by rfl",
+    "code": "example : 1 = 2 := by rfl",
+    "topic": "diagnostics",
+    "expected_initial": "failed",
+    "expected_repair": "failed"
+  }
+]

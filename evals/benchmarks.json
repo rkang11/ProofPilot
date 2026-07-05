@@ -1,0 +1,26 @@
+[
+  {
+    "id": "eq_rfl_001",
+    "title": "Reflexive equality",
+    "statement": "example : 1 = 1 := by rfl",
+    "code": "example : 1 = 1 := by rfl",
+    "topic": "equality",
+    "expected": "verified"
+  },
+  {
+    "id": "and_intro_001",
+    "title": "Conjunction introduction",
+    "statement": "example (p q : Prop) (hp : p) (hq : q) : p ∧ q := by exact And.intro hp hq",
+    "code": "example (p q : Prop) (hp : p) (hq : q) : p ∧ q := by exact And.intro hp hq",
+    "topic": "logic",
+    "expected": "verified"
+  },
+  {
+    "id": "intentional_error_001",
+    "title": "Intentional failing proof",
+    "statement": "example : 1 = 2 := by rfl",
+    "code": "example : 1 = 2 := by rfl",
+    "topic": "diagnostics",
+    "expected": "failed"
+  }
+]
